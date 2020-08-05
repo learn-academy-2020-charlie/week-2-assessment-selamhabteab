@@ -44,6 +44,7 @@ Answer the following questions. First, without external resources. Challenge you
               )
             }
           }
+          export default Name;
 
 4. What is JSX?
 
@@ -68,9 +69,9 @@ Answer the following questions. First, without external resources. Challenge you
 
 6. STRETCH: What is hoisting in JavaScript?
 
-  Your answer:
+  Your answer: I'm not quite sure and can look it up for an accurate answer.
 
-  Researched answer:
+  Researched answer: js behavior where var declaration at any scope is moved up
 
 
 

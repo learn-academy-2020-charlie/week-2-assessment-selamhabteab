@@ -16,10 +16,10 @@
       return `${numb} is not divisible by 3`
     }
     }
-   console.log(div3(num1));
-   // console.log(div3(num2));
-   // console.log(div3(num3));
-   // console.log(div3(355));
+  console.log(div3(num1));
+  console.log(div3(num2));
+  console.log(div3(num3));
+  console.log(div3(355));
 
 // (2) Create a function that takes in the randomNouns variable and returns an array with all the words capitalized.
     var randomNouns = ["streetlamp", "potato", "teeth", "conclusion", "nephew", "temperature", "database"]
@@ -34,7 +34,7 @@
 // this final return, will return an array but if you want to view in a string you must join the values of the array with .join("") method.
       return capNouns.join(", ")
     }
-    console.log(uppercase(randomNouns));
+  console.log(uppercase(randomNouns));
 
 
 // (3) Create a function that takes in the mixedDataArray array and returns an array with ONLY NUMBERS sorted from least to greatest.
@@ -49,26 +49,59 @@
       })
       return numbArray.sort(function(a,b) {return a-b})
     }
-    console.log(onlyNumbs(mixedDataArray))
+  console.log(onlyNumbs(mixedDataArray))
 
 // (4) Create a function that takes in a string and logs the index of the first vowel.
     var vowelTester1 = "learn"
     // Expected output: 1
     var vowelTester2 = "throw"
     // Expected output: 3
-//pseudo-code:
 
-
-
+const firstVowel = (string) => {
+  let vowelIndex = ""
+    for(let i = 0; i <string.length; i++) {
+      if (string.charAt(i) =='a' || 
+      string.charAt(i) == 'e' || 
+      string.charAt(i) =='i' || 
+      string.charAt(i) == 'o' || 
+      string.charAt(i) == 'u'){
+        vowelIndex = i 
+        break
+        }
+      }
+  return vowelIndex
+  }
+  console.log(firstVowel(vowelTester1))
+  console.log(firstVowel(vowelTester2))  
 
 // (5) Create a function that takes the toonimals array and returns an array with only the toon objects that are cats.
 // Expected output: [ { name: "Stimpy", animal: "cat" }, { name: "Scratchy", animal: "cat" }, { name: "Felix", animal: "cat" } ]
 
 var toonimals = [ {name: "Itchy", animal: "mouse"}, {name: "Stimpy", animal: "cat"}, {name: "Daffy", animal: "duck"}, {name: "Scratchy", animal: "cat"}, {name: "Ren", animal: "dog"}, {name: "Felix", animal: "cat"}]
 
+//psuedocode: Create a function that takes in an array
+const catsOnly = (array) => {
+// filter through the array and return only the values that have the string "cat"
+  return array.filter (value => {
+//destructure the object to make it easier to use
+    let {name, animal} = value;
+    if (animal === "cat"){
+//if the animal key value pair is equal to cat, return that value.
+      return value
+    }
+  })
+}
+console.log(catsOnly(toonimals));
 
 
-
-
-// (6) Using the toonimals variable, create a function that returns only the names of the non-cats.
-// Expected output: "Itchy" "Daffy" "Ren"
+// // (6) Using the toonimals variable, create a function that returns only the names of the non-cats.
+// // Expected output: "Itchy" "Daffy" "Ren"
+let notCats = (array) => {
+  let dogsOnly = []
+  array.filter(value => {
+      if(value.animal !=="cat")
+      dogsOnly.push(value.name)
+  })
+  return dogsOnly.toString()
+}
+console.log(notCats(toonimals))
