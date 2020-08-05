@@ -15,8 +15,6 @@
     <script type="text/babel">
     // No need to change anything ABOVE this line ^
 
-
-
     class App extends React.Component{
       constructor(props){
         super(props)
@@ -28,6 +26,7 @@
       }
 
       nextMood = () => {
+        //added destructering: let {currentMood, moods} = this.state 
         if(currentMood === moods.length - 1){
           this.setState({ currentMood: currentMood = 0 })
         } else {
@@ -41,12 +40,13 @@
 
       render(){
         return(
+          <div>
             <h1>Welcome to the Mood Meter App</h1>
             <h3>Mood Options:</h3>
             <p style={{fontSize: "50px"}}>
               { this.state.moods[this.state.currentMood] }
             </p>
-            <button onClick={ }>
+            <button onClick={this.nextMood}>
               Click Here For Next Mood Option
             </button>
             <h3>Save your mood here!</h3>
@@ -57,6 +57,7 @@
             <p style={{fontSize: "50px"}}>
               { this.state.setMood }
             </p>
+          </div>
         )
       }
     }
